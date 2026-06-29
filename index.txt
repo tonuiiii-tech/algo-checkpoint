@@ -1,0 +1,30 @@
+ALGORITHM analyze_sentence
+VAR
+    char_count : INTEGER := 0;
+    word_count : INTEGER := 1;
+    vowel_count : INTEGER := 0;
+    ch : CHARACTER;
+BEGIN
+    Read(ch);
+    
+    WHILE (ch != '.') DO
+        char_count := char_count + 1;
+        
+        IF (ch = 'a' OR ch = 'e' OR ch = 'i' OR ch = 'o' OR ch = 'u' OR
+            ch = 'A' OR ch = 'E' OR ch = 'I' OR ch = 'O' OR ch = 'U') THEN
+            vowel_count := vowel_count + 1;
+        END_IF
+        
+        IF (ch = ' ') THEN
+            word_count := word_count + 1;
+        END_IF
+        
+        Read(ch);
+    END_WHILE
+    
+    char_count := char_count + 1;
+
+    Write("Length of the sentence: ", char_count);
+    Write("Number of words: ", word_count);
+    Write("Number of vowels: ", vowel_count);
+END
